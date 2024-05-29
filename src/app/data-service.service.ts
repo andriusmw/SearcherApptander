@@ -10,10 +10,12 @@ export class DataService {
   private resultsSubject = new BehaviorSubject<any[]>([]);
   results$ = this.resultsSubject.asObservable();
 
+  private jsonURL = '../assets/personas.json';
+
   constructor(private http: HttpClient) {}
 
   search(tipoPersona: string, criterio: string, documento?: string, nombre?: string): Observable<any[]> {
-    return this.http.get<any[]>('../assets/personas.json').pipe(
+    return this.http.get<any[]>(this.jsonURL).pipe(
       map(personas => personas.filter(persona => {
         if (persona.tipoPersona !== tipoPersona) {
           return false;
