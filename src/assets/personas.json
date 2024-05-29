@@ -1,0 +1,7 @@
+[
+  {"tipoPersona": "F", "documento": "12345678A", "nombre": "Juan Pérez"},
+  {"tipoPersona": "J", "documento": "A12345678", "nombre": "Empresa1 S.A."},
+  {"tipoPersona": "J", "documento": "A12345679", "nombre": "Empresa2 S.A."},
+  {"tipoPersona": "J", "documento": "A12345689", "nombre": "Empresa3 S.A."},
+  {"tipoPersona": "F", "documento": "87654321B", "nombre": "María García"}
+]
