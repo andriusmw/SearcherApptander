@@ -20,10 +20,10 @@ export class DataService {
         if (persona.tipoPersona !== tipoPersona) {
           return false;
         }
-        if (criterio === 'documento' && persona.documento !== documento) {
+        if (criterio === 'documento' && documento && !persona.documento.includes(documento)) {
           return false;
         }
-        if (criterio === 'nombre' && persona.nombre?.toLowerCase() !== nombre?.toLowerCase()) {
+        if (criterio === 'nombre' && nombre && !persona.nombre?.toLowerCase().includes(nombre.toLowerCase())) {
           return false;
         }
         return true;

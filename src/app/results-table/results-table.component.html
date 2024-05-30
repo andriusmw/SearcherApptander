@@ -1,18 +1,20 @@
-<table *ngIf="results.length > 0">
-  <thead>
-    <tr>
-      <th>Tipo de Persona</th>
-      <th>Documento</th>
-      <th>Nombre</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let result of results">
-      <td>{{ result.tipoPersona }}</td>
-      <td>{{ result.documento }}</td>
-      <td>{{ result.nombre }}</td>
-    </tr>
-  </tbody>
-</table>
-
-<div *ngIf="results.length === 0">No se han encontrado datos.</div>
+<div class="table-container">
+  <button (click)="clearResults()" class="clear-button">Limpiar Resultados</button>
+  <table *ngIf="results.length > 0" class="results-table">
+    <thead>
+      <tr>
+        <th>Tipo de Persona</th>
+        <th>Documento</th>
+        <th>Nombre</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let result of results">
+        <td>{{ result.tipoPersona }}</td>
+        <td>{{ result.documento }}</td>
+        <td>{{ result.nombre }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div *ngIf="results.length === 0" class="no-data">No se han encontrado datos.</div>
+</div>
