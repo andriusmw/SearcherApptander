@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-search-form',
   templateUrl: './search-form.component.html',
+  styleUrl: './search-form.component.css',
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule]
 })

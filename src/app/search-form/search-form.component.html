@@ -1,31 +1,31 @@
-<form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
-  <div>
+<form [formGroup]="searchForm" (ngSubmit)="onSubmit()" class="search-form">
+  <div class="form-group">
     <label for="tipoPersona">Tipo de Persona:</label>
-    <select id="tipoPersona" formControlName="tipoPersona">
+    <select id="tipoPersona" formControlName="tipoPersona" class="form-control">
       <option value="F">Física</option>
       <option value="J">Jurídica</option>
     </select>
   </div>
 
-  <div>
+  <div class="form-group">
     <label for="criterio">Criterio de Búsqueda:</label>
-    <select id="criterio" formControlName="criterio">
+    <select id="criterio" formControlName="criterio" class="form-control">
       <option value="documento">Documento</option>
       <option value="nombre">Nombre</option>
     </select>
   </div>
 
-  <div *ngIf="searchForm.get('criterio')?.value === 'documento'">
+  <div *ngIf="searchForm.get('criterio')?.value === 'documento'" class="form-group">
     <label for="documento">Documento:</label>
-    <input id="documento" type="text" formControlName="documento" placeholder="Ingrese DNI/NIF">
+    <input id="documento" type="text" formControlName="documento" class="form-control" placeholder="Ingrese DNI/NIF">
   </div>
 
-  <div *ngIf="searchForm.get('criterio')?.value === 'nombre'">
+  <div *ngIf="searchForm.get('criterio')?.value === 'nombre'" class="form-group">
     <label for="nombre">Nombre:</label>
-    <input id="nombre" type="text" formControlName="nombre" placeholder="Ingrese Nombre">
+    <input id="nombre" type="text" formControlName="nombre" class="form-control" placeholder="Ingrese Nombre">
   </div>
 
-  <button type="submit" [disabled]="!searchForm.valid">Buscar</button>
+  <button type="submit" [disabled]="!searchForm.valid" class="search-button">Buscar</button>
 </form>
 
-<div *ngIf="errorMessage">{{ errorMessage }}</div>
+<div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
