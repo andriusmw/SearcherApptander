@@ -2,12 +2,10 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { DataService } from '../data-service.service';
-import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-search-form',
   templateUrl: './search-form.component.html',
-  styleUrl: './search-form.component.css',
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule]
 })
@@ -41,7 +39,6 @@ export class SearchFormComponent {
           this.errorMessage = 'No se han encontrado datos.';
         } else {
           this.errorMessage = '';
-          this.dataService.updateResults(results);
         }
       },
       error => {
